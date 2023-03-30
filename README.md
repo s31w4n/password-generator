@@ -1,5 +1,5 @@
 #### Password Generator
-user can choose weather password contains lowercase, uppercase, number or symbol.
+User can choose weather password contains lowercase, uppercase, number or symbol.
 implements with:
 - HTML
 - CSS
