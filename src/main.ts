@@ -1,6 +1,5 @@
 import Toastify from 'toastify-js';
 import { calculatePasswordStrength, generatePassword } from './password-logics';
-import './style.css';
 
 // Getting DOM Elements
 const resultElement: HTMLInputElement = document.querySelector(
