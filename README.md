@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://github.com/s31w4n/password-generator)
-- [Live Site URL](https://s31w4n-password-generator.netlify.app)
+- [Live Site URL](https://s31w4n-password-generator.vercel.app)
 
 ### Built with
 
