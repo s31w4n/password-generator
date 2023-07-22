@@ -2,59 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-      crossorigin="anonymous"
-    ></script>
+    <script type="module" src="src/main.ts"></script>
     <title>Password Generator</title>
   </head>
   <body>
-    <div class="container">
-      <h2>Password Generator</h2>
-      <div class="result-container">
-        <span id="result"></span>
-        <button class="btn" id="clipboard">
-          <i class="far fa-clipboard"></i>
-        </button>
-      </div>
-      <div class="settings">
-        <div class="setting">
-          <label>Password length</label>
-          <input type="number" id="length" min="4" max="20" value="20" />
-        </div>
-        <div class="setting">
-          <label>Include uppercase letters</label>
-          <input type="checkbox" id="uppercase" checked />
-        </div>
-        <div class="setting">
-          <label>Include lowercase letters</label>
-          <input type="checkbox" id="lowercase" checked />
-        </div>
-        <div class="setting">
-          <label>Include numbers</label>
-          <input type="checkbox" id="numbers" checked />
-        </div>
-        <div class="setting">
-          <label>Include symbols</label>
-          <input type="checkbox" id="symbols" checked />
-        </div>
-      </div>
-      <button class="btn btn-large" id="generate">Generate password</button>
+    <h1 class="title">Password Generator</h1>
+    <div class="password-container">
+      <label for="password" class="sr-only"
+        >Password displays here when generated</label
+      >
+      <input
+        readonly
+        type="text"
+        id="password"
+        name="password"
+        class="password"
+        placeholder="P4$5W0rD!"
+      />
+      <button
+        type="button"
+        id="clipboard"
+        class="btn-clipboard"
+        aria-label="Copy password to clipboard"
+      >
+        <img src="images/icon-copy.svg" alt="Copy" />
+      </button>
     </div>
-    <script src="main.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
+    <div class="settings" id="settings">
+      <div class="range-info-container">
+        <label for="length" class="label-length">Character Length</label>
+        <p class="value-length-display">10</p>
+      </div>
+      <input
+        type="range"
+        name="length"
+        id="length"
+        class="input-length"
+        min="0"
+        max="20"
+        step="1"
+        autocomplete="off"
+      />
+      <div class="checkbox-container">
+        <input
+          class="input-checkbox"
+          type="checkbox"
+          name="uppercase"
+          id="uppercase"
+          autocomplete="off"
+        />
+        <label class="label-checkbox" for="uppercase"
+          >Include Uppercase Letters</label
+        >
+        <input
+          class="input-checkbox"
+          type="checkbox"
+          name="lowercase"
+          id="lowercase"
+          autocomplete="off"
+        />
+        <label class="label-checkbox" for="lowercase"
+          >Include Lowercase Letters</label
+        >
+        <input
+          class="input-checkbox"
+          type="checkbox"
+          name="numbers"
+          id="numbers"
+          autocomplete="off"
+        />
+        <label class="label-checkbox" for="numbers">Include Numbers</label>
+        <input
+          class="input-checkbox"
+          type="checkbox"
+          name="symbols"
+          id="symbols"
+          autocomplete="off"
+        />
+        <label class="label-checkbox" for="symbols">Include Symbols</label>
+      </div>
+      <div class="strength-meter-container">
+        <p class="strength-meter-label">Strength</p>
+        <div class="strength-meter">
+          <p class="strength-level" id="strength-level"></p>
+          <div class="indicator-light-container">
+            <div class="indicator-light" id="indicator-light-1"></div>
+            <div class="indicator-light" id="indicator-light-2"></div>
+            <div class="indicator-light" id="indicator-light-3"></div>
+            <div class="indicator-light" id="indicator-light-4"></div>
+          </div>
+        </div>
+      </div>
+      <button disabled type="button" class="btn-generate" id="btn-generate">
+        Generate
+        <img
+          class="img-arrow"
+          src="images/icon-arrow-right.svg"
+          alt=""
+        />
+      </button>
+    </div>
+    <p class="attribution">
+      Challenge by
+      <a target="_blank" href="https://www.frontendmentor.io">Frontend Mentor</a
+      >. Created by
+      <a target="_blank" href="https://github.com/s31w4n">S41W4N</a>
+    </p>
   </body>
 </html>
